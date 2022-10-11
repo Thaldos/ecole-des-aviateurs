@@ -1,1 +1,102 @@
-<iframe class="_49_rs" title="PayPal Button" aria-label="PayPal Button" scrolling="no" src="https://www.powr.io/plugins/paypal-button/wix_cached_view?pageId=zggji&amp;compId=comp-l8syhpoy&amp;viewerCompId=comp-l8syhpoy&amp;siteRevision=102&amp;viewMode=site&amp;deviceType=desktop&amp;locale=fr&amp;tz=Europe%2FParis&amp;regionalLanguage=fr&amp;width=250&amp;height=125&amp;instance=13youF7EdJ-zhHwddGqeercpjV-m9Y18eXFdVZxDt-A.eyJpbnN0YW5jZUlkIjoiZWU5ZDc5ODItMWQwYy00NTUyLThkZjEtYWQ2ODI2NjEzMDY5IiwiYXBwRGVmSWQiOiIxMzY5NTdmNS0zMTA2LTAyOWYtZDhlZi00YTY2MTMwMGFjOGMiLCJzaWduRGF0ZSI6IjIwMjItMTAtMDlUMTk6MzY6MzUuMDAwWiIsImRlbW9Nb2RlIjpmYWxzZSwiYWlkIjoiMmJiY2YyMzAtMGRiMi00Mzg0LWI4MDEtN2EyYTJjNzQ0MzFiIiwic2l0ZU93bmVySWQiOiI4ODdjZjZmOC0wZWEzLTQzYmUtOWQyNC0wZTc0NDE4MWY0ZTEifQ&amp;currency=EUR&amp;currentCurrency=EUR&amp;commonConfig=%7B%22brand%22%3A%22wix%22%2C%22bsi%22%3A%22178c2e64-5369-4598-a7fa-2f8254fe4f8e%7C1%22%2C%22BSI%22%3A%22178c2e64-5369-4598-a7fa-2f8254fe4f8e%7C1%22%7D&amp;vsi=879acb90-b6c7-4e1b-8667-742279e59403" allowfullscreen="" allowtransparency="true" allowvr="true" frameborder="0" allow="autoplay;camera;microphone;geolocation;vr"></iframe>
+<div id="smart-button-container">
+    <div style="text-align: center;">
+        <div style="margin-bottom: 1.25rem;">
+            <p>Initiation au pilotage deux leçons.</p>
+            <select id="item-options"><option value="" price="179.00"> - 179.00 EUR</option></select>
+            <select style="visibility: hidden" id="quantitySelect"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        </div>
+        <div id="paypal-button-container"></div>
+    </div>
+</div>
+<script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
+<script>
+    function initPayPalButton() {
+        var shipping = 0;
+        var itemOptions = document.querySelector("#smart-button-container #item-options");
+        var quantity = parseInt(3);
+        var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+        if (!isNaN(quantity)) {
+        quantitySelect.style.visibility = "visible";
+        }
+        var orderDescription = 'Initiation au pilotage deux leçons.';
+        if(orderDescription === '') {
+        orderDescription = 'Item';
+        }
+        paypal.Buttons({
+        style: {
+            shape: 'rect',
+            color: 'blue',
+            layout: 'vertical',
+            label: 'pay',
+            
+        },
+      createOrder: function(data, actions) {
+        var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+        var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+        var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+        if(quantitySelect.options.length > 0) {
+          quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+        } else {
+          quantity = 1;
+        }
+
+        tax *= quantity;
+        tax = Math.round(tax * 100) / 100;
+        var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+        priceTotal = Math.round(priceTotal * 100) / 100;
+        var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+        return actions.order.create({
+          purchase_units: [{
+            description: orderDescription,
+            amount: {
+              currency_code: 'EUR',
+              value: priceTotal,
+              breakdown: {
+                item_total: {
+                  currency_code: 'EUR',
+                  value: itemTotalValue,
+                },
+                shipping: {
+                  currency_code: 'EUR',
+                  value: shipping,
+                },
+                tax_total: {
+                  currency_code: 'EUR',
+                  value: tax,
+                }
+              }
+            },
+            items: [{
+              name: selectedItemDescription,
+              unit_amount: {
+                currency_code: 'EUR',
+                value: selectedItemPrice,
+              },
+              quantity: quantity
+            }]
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(orderData) {
+          
+          // Full available details
+          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+          // Show a success message within this page, e.g.
+          const element = document.getElementById('paypal-button-container');
+          element.innerHTML = '';
+          element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+          // Or go to another URL:  actions.redirect('thank_you.html');
+
+        });
+      },
+      onError: function(err) {
+        console.log(err);
+      },
+    }).render('#paypal-button-container');
+  }
+  initPayPalButton();
+</script>

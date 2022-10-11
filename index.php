@@ -41,7 +41,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#tarifs">Tarifs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#toutes-nos-formules">Toutes nos formules</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Photos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#brevet-pilote">Brevets de pilote</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -54,14 +54,14 @@
             <div class="container">
                 <div class="masthead-subheading">Bienvenue à l'école des aviateurs</div>
                 <div class="masthead-heading text-uppercase">Cours et baptêmes de pilotage à Rouen</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#tarifs">Voir plus</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#toutes-nos-formules">Voir plus</a>
             </div>
         </header>
-        <!-- Tarifs-->
-        <section class="page-section pt-4" id="tarifs">
+        <!-- Toutes nos formules-->
+        <section class="page-section pt-4" id="toutes-nos-formules">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Tarifs</h2>
+                    <h2 class="section-heading text-uppercase">Toutes nos formules</h2>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4 mx-auto">
@@ -316,7 +316,21 @@
                         </div>
                         <div class="col-md-4">
                             <h3>Tél</h3>
-                            06 50 22 97 82
+                            <a href="tel:0650229782">
+                                <button type="button" class="btn btn-primary btn-sm">06 50 22 97 82 <i class="ms-2 fas fa-phone" aria-hidden="true"></i></button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row mb-4 justify-content-center">
+                        <!--The div element for the Google map -->
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=ecoles%20des%20aviateur%20rouen&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                <a href="https://123movies-to.org"></a><br>
+                                <style>.mapouter{position:relative;text-align:right;height:500px;width:100%;}</style>
+                                <a href="https://www.embedgooglemap.net">google maps iframe code</a>
+                                <style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style>
+                            </div>
                         </div>
                     </div>
                     <h3 class="section-subheading text-muted">Vous pouvez aussi nous contacter en utilisant ce formulaire :</h3>
