@@ -64,7 +64,7 @@
                     <h2 class="section-heading text-uppercase">Toutes nos formules</h2>
                 </div>
                 <div class="row text-center">
-                    <div class="col-md-4 mx-auto">
+                    <div class="col-md-4 mx-auto mb-5">
                         <video class="w-100 img-thumbnail" autoplay loop muted>
                             <source src="assets/videos/bapteme.mp4" type="video/mp4" />
                         </video>
@@ -77,37 +77,43 @@
                             Exactement comme si vous prépariez un permis avion en aéro-club. Ce baptème de pilotage avion comptera dans vos heures de vol au cas ou vous souhaiteriez un jour passer un brevet de pilote.
                             Cette initiation au pilotage vous permettra également de visiter la région de Rouen comme vous ne l'avez jamais vue.
                         </p>
-                        <?php include ('paypal90.php'); ?>
+                        <?php include('paypal90.php'); ?>
                     </div>
                 </div>
                 <div class="row text-center">
-                    <div class="col-md-4">
-                        <img title="Vol de nuit" class="w-100 img-thumbnail" src="assets/img/vol-de-nuit.webp">
+                    <div class="col-md-4 mb-5">
+                        <video class="w-100 img-thumbnail" autoplay loop muted>
+                            <source src="assets/videos/vol-de-nuit.mp4" type="video/mp4" />
+                        </video>
                         <h4 class="my-3">Vol de nuit</h4>
                         <p class="text-muted">
                             Faites votre cours de pilotage en vol de nuit autour de rouen pour 120 Euros.
                         </p>
-                        <?php include ('paypal120.php'); ?>
+                        <?php include('paypal120.php'); ?>
                     </div>
                     <div class="col-md-4">
-                        <img title="Deux leçons de pilotage avion" class="w-100 img-thumbnail" src="assets/img/deux-lecon-pilotage-avion.webp">
+                        <video class="w-100 img-thumbnail" autoplay loop muted>
+                            <source src="assets/videos/deux-lecons.mp4" type="video/mp4" />
+                        </video>
                         <h4 class="my-3">Deux leçons de pilotage avion</h4>
                         <p class="text-muted">
                             Avec deux lecons, vous aurez un bien meilleur apercu du pilotage.
                             La premiere fois, on decouvre, la deuxieme, on réalise!
-                            189 euros
+                            179 euros
                         </p>
-                        <?php include ('paypal189.php'); ?>
+                        <?php include('paypal179.php'); ?>
                     </div>
-                    <div class="col-md-4">
-                        <img title="Quatre leçons de pilotage en avion" class="w-100 img-thumbnail" src="assets/img/quatre-lecons-pilotage-avion.webp">
+                    <div class="col-md-4 mb-5">
+                        <video class="w-100 img-thumbnail" autoplay loop muted>
+                            <source src="assets/videos/quatre-lecons.mp4" type="video/mp4" />
+                        </video>
                         <h4 class="my-3">Quatre leçons de pilotage en avion</h4>
                         <p class="text-muted">
                             Avec quatre lecons, vous serez très à l'aise en vol.
                             C'est un bon tremplin vers un brevet.
                             350 Euros
                         </p>
-                        <?php include ('paypal350.php'); ?>
+                        <?php include('paypal350.php'); ?>
                     </div>
                 </div>
             </div>
