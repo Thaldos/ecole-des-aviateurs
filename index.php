@@ -1,6 +1,6 @@
 <?php 
     if (isset($_POST['submit'])) {
-        $to = "daggets27@msn.com";
+        $to = "lenordl@msn.com";
         $firstName = $_POST['name'] ?? '';
         $email = $_POST['email'] ?? '';
         $phone = $_POST['phone'] ?? '';
