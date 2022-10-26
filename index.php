@@ -318,7 +318,7 @@
                         </div>
                         <div class="col-md-4">
                             <h3>E-mail</h3>
-                            daggets27@msn.com
+                            lenordl@msn.com
                         </div>
                         <div class="col-md-4">
                             <h3>Tél</h3>
