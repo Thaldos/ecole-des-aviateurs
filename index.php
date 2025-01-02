@@ -87,7 +87,7 @@
                         </video>
                         <h4 class="my-3">Vol de nuit</h4>
                         <p class="text-muted">
-                            Faites votre cours de pilotage en vol de nuit autour de rouen pour 120 Euros.
+                            Faites votre cours de pilotage en vol de nuit autour de rouen pour 129 Euros.
                         </p>
                         <?php include('paypal120.php'); ?>
                     </div>
@@ -99,7 +99,7 @@
                         <p class="text-muted">
                             Avec deux lecons, vous aurez un bien meilleur apercu du pilotage.
                             La premiere fois, on decouvre, la deuxieme, on réalise!
-                            179 euros
+                            199 euros
                         </p>
                         <?php include('paypal179.php'); ?>
                     </div>
@@ -111,7 +111,7 @@
                         <p class="text-muted">
                             Avec quatre lecons, vous serez très à l'aise en vol.
                             C'est un bon tremplin vers un brevet.
-                            350 Euros
+                            399 Euros
                         </p>
                         <?php include('paypal350.php'); ?>
                     </div>
